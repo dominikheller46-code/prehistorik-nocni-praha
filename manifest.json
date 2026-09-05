@@ -1,0 +1,14 @@
+{
+  "name": "PREHISTORIK — Noční Praha",
+  "short_name": "PREHISTORIK",
+  "description": "Policajtská rodina vs noční Praha. Hra pro palec.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#05040a",
+  "theme_color": "#05040a",
+  "icons": [
+    { "src": "icon.svg", "sizes": "512x512", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
