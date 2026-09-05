@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#05040a">
+<meta name="apple-mobile-web-app-title" content="PREHISTORIK">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon.svg">
+<title>PREHISTORIK — NOČNÍ PRAHA</title>
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    margin: 0; height: 100%; height: 100dvh; background: #05040a; color: #f4e6c0;
+    font-family: ui-monospace, monospace;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    overflow: hidden; touch-action: none; user-select: none;
+  }
+  h1 { display:none; }
+  #wrap { position: relative; line-height: 0; }
+  canvas { display:block; width:100%; height:100%; background:#0b0a16; image-rendering: pixelated; touch-action: none; }
+  #pad { position: absolute; inset: 0; pointer-events: none; }
+  #pad button {
+    pointer-events: auto; position: absolute;
+    border: 3px solid rgba(240,192,64,.7);
+    background: rgba(12,8,24,.62);
+    color: #f0c040; font: 13px ui-monospace, monospace;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    touch-action: none;
+  }
+  #pad button.on { background: rgba(240,192,64,.5); color:#fff; }
+  #btnL, #btnR, #btnJ { width: 86px; height: 86px; }
+  #btnA { width: 104px; height: 104px; font-size: 14px; }
+  #btnL { left: max(10px, env(safe-area-inset-left)); bottom: max(16px, env(safe-area-inset-bottom)); }
+  #btnR { left: calc(max(10px, env(safe-area-inset-left)) + 96px); bottom: max(16px, env(safe-area-inset-bottom)); }
+  #btnJ { right: calc(max(10px, env(safe-area-inset-right)) + 116px); bottom: max(16px, env(safe-area-inset-bottom)); }
+  #btnA { right: max(10px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); }
+  #btnOK { left: 50%; bottom: max(18px, env(safe-area-inset-bottom)); transform: translateX(-50%); width: 110px; height: 64px; border-radius: 18px; font-size: 16px; }
+  .fam { bottom: calc(112px + env(safe-area-inset-bottom)); width: 56px; height: 56px; font-size: 14px; border-radius: 14px; }
+  #btnH1 { left: max(10px, env(safe-area-inset-left)); }
+  #btnH2 { left: calc(max(10px, env(safe-area-inset-left)) + 62px); }
+  #btnH3 { left: calc(max(10px, env(safe-area-inset-left)) + 124px); }
+  #btnH4 { left: calc(max(10px, env(safe-area-inset-left)) + 186px); }
+</style>
+</head>
+<body>
+<h1>PREHISTORIK — NOČNÍ PRAHA</h1>
+<div id="wrap">
+  <canvas id="c" width="960" height="540"></canvas>
+  <div id="pad">
+    <button type="button" id="btnH1" class="fam">1</button>
+    <button type="button" id="btnH2" class="fam">2</button>
+    <button type="button" id="btnH3" class="fam">3</button>
+    <button type="button" id="btnH4" class="fam">4</button>
+    <button type="button" id="btnL">◀</button>
+    <button type="button" id="btnR">▶</button>
+    <button type="button" id="btnOK">OK</button>
+    <button type="button" id="btnJ">SKOK</button>
+    <button type="button" id="btnA">BÍJ</button>
+  </div>
+</div>
+<script src="p1.js"></script>
+<script src="p2.js"></script>
+<script src="p3.js"></script>
+</body>
+</html>
